@@ -1,31 +1,19 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import "./globals.css"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Next.js Assignment',
-  description: 'A Next.js project demonstrating CSR, SSR, SSG, and ISR',
+export const metadata = {
+  title: "Next.js Assignment",
+  description: "Next.js rendering techniques assignment",
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </div>
+      <body className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-grow container mx-auto p-4">{children}</main>
+        <Footer />
       </body>
     </html>
   )
